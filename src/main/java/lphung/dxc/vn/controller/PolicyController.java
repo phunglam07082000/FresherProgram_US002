@@ -209,7 +209,7 @@ public class PolicyController {
 
 			if (!check) {
 
-				map.addAttribute("mesage", "New Motor policy is issued and saved successfully with ‘In force’ status");
+				map.addAttribute("mesage", "New Motor policy is issued and saved successfully with â€˜In forceâ€™ status");
 			}
 		} catch (ParseException e) {
 			
@@ -228,12 +228,12 @@ public class PolicyController {
 			map.addAttribute("policy", policy);
 
 		} catch (Exception e) {
-			map.addAttribute("mesage", " Client not exist’ error message.");
+			map.addAttribute("mesage", " Client not existâ€™ error message.");
 		}
 
 		return "detail";
 	}
-
+            //Fail
 	@PostMapping("/update")
 	public String updatePolicy(@RequestParam int id, @RequestParam double rate, @RequestParam double sumInsured,
 			ModelMap map) {
