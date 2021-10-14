@@ -10,43 +10,41 @@ import javax.persistence.Id;
 
 @Entity(name = "Policy")
 public class PolicyEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(name = "StartDate")
 	private Date startDate;
-	
+
 	@Column(name = "ExpiryDate")
 	private Date expiryDate;
-	
+
 	@Column(name = "PolicyOwner")
 	private String policyOwner;
-	
+
 	@Column(name = "EngineNo")
 	private String engineNo;
 
-	
 	@Column(name = "ChassisNo")
 	private String chassisNo;
-	
+
 	@Column(name = "VehicleNo")
 	private String vehicleNo;
-	
+
 	@Column(name = "BillingCurrency")
 	private String billingCurrency;
-	
+
 	@Column(name = "SumInsured")
 	private double sumInsured;
-	
+
 	@Column(name = "Rate")
 	private double rate;
-	
+
 	@Column(name = "AnnualPremium")
 	private double annualPremium;
-	
-	
+
 	@Column(name = "PostedPremium")
 	private double postedPremium;
 
@@ -141,8 +139,6 @@ public class PolicyEntity {
 		this.annualPremium = annualPremium;
 	}
 
-	
-
 	public double getPostedPremium() {
 		return postedPremium;
 	}
@@ -158,6 +154,5 @@ public class PolicyEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
+
 }

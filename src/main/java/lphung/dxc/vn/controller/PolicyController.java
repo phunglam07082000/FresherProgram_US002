@@ -48,8 +48,9 @@ public class PolicyController {
 
 		if (policy.getExpiryDate().equals("") || policy.getExpiryDate().equals("") || policy.getPolicyOwner().equals("")
 				|| policy.getEngineNo().equals("") || policy.getChassisNo().equals("")
-				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("") || policy.getSumInsured()<0||policy.getRate()<0  ) {
-			
+				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("")
+				|| policy.getSumInsured() < 0 || policy.getRate() < 0) {
+
 			map.addAttribute("mesage", "Error message is displayed.");
 			return "add";
 
@@ -87,12 +88,12 @@ public class PolicyController {
 
 	@PostMapping("/create")
 	public String createPolicy(@ModelAttribute("policy") PolicyEntity policy, ModelMap map) {
-		
-		
+
 		if (policy.getExpiryDate().equals("") || policy.getExpiryDate().equals("") || policy.getPolicyOwner().equals("")
 				|| policy.getEngineNo().equals("") || policy.getChassisNo().equals("")
-				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("") || policy.getSumInsured()<0||policy.getRate()<0) {
-			
+				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("")
+				|| policy.getSumInsured() < 0 || policy.getRate() < 0) {
+
 			map.addAttribute("mesage", "Error message is displayed.");
 			return "create";
 
@@ -154,13 +155,12 @@ public class PolicyController {
 
 	@PostMapping("/issue")
 	public String isuePolicy(@ModelAttribute("policy") PolicyEntity policy, ModelMap map) {
-		
-		
 
 		if (policy.getExpiryDate().equals("") || policy.getExpiryDate().equals("") || policy.getPolicyOwner().equals("")
 				|| policy.getEngineNo().equals("") || policy.getChassisNo().equals("")
-				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("") || policy.getSumInsured()<0||policy.getRate()<0  ) {
-			
+				|| policy.getVehicleNo().equals("") || policy.getBillingCurrency().equals("")
+				|| policy.getSumInsured() < 0 || policy.getRate() < 0) {
+
 			map.addAttribute("mesage", "Error message is displayed.");
 			return "create";
 
@@ -209,10 +209,11 @@ public class PolicyController {
 
 			if (!check) {
 
-				map.addAttribute("mesage", "New Motor policy is issued and saved successfully with ‘In force’ status");
+				map.addAttribute("mesage",
+						"New Motor policy is issued and saved successfully with ‘In force’ status");
 			}
 		} catch (ParseException e) {
-			
+
 			e.printStackTrace();
 		}
 
@@ -233,7 +234,8 @@ public class PolicyController {
 
 		return "detail";
 	}
-            //Fail
+
+	// Fail
 	@PostMapping("/update")
 	public String updatePolicy(@RequestParam int id, @RequestParam double rate, @RequestParam double sumInsured,
 			ModelMap map) {

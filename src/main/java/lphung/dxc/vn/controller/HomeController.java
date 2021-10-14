@@ -14,17 +14,17 @@ import lphung.dxc.vn.service.IPolicyService;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	
+
 	@Autowired
 	private IPolicyService policyService;
 
 	@GetMapping
 	public String homePage(ModelMap map) {
-		
-		List<PolicyEntity> list=policyService.findAll();
-		
+
+		List<PolicyEntity> list = policyService.findAll();
+
 		map.addAttribute("listPolicy", list);
-	
+
 		return "home";
 	}
 

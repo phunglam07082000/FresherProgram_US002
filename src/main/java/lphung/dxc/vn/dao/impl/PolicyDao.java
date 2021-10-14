@@ -6,11 +6,8 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-
 
 import lphung.dxc.vn.dao.IPolicyDao;
 import lphung.dxc.vn.entity.PolicyEntity;
@@ -39,7 +36,8 @@ public class PolicyDao implements IPolicyDao {
 
 		return list;
 	}
-     @Transactional
+
+	@Transactional
 	public PolicyEntity findById(int id) {
 		Session session = sessionFactoty.getCurrentSession();
 		String sql = "from Policy c where c.id=" + id;

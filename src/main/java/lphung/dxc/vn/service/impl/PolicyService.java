@@ -11,7 +11,7 @@ import lphung.dxc.vn.service.IPolicyService;
 
 @Service
 public class PolicyService implements IPolicyService {
-	
+
 	@Autowired
 	private IPolicyDao policyDao;
 
@@ -21,13 +21,12 @@ public class PolicyService implements IPolicyService {
 	}
 
 	public List<PolicyEntity> findAll() {
-		
+
 		return policyDao.findAll();
 	}
 
-
 	public PolicyEntity findById(int id) {
-		
+
 		return policyDao.findById(id);
 	}
 
